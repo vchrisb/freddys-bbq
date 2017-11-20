@@ -4,13 +4,13 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2SsoProperties;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 
 import microsec.test.SecurityIntegrationTest;
 
-@SpringBootTest
-@ContextConfiguration(classes = AdminApplication.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = "security.require-ssl=true")
 public class AdminApplicationSecurityTests extends SecurityIntegrationTest {
 

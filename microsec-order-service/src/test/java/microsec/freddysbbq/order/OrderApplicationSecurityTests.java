@@ -21,6 +21,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.test.context.ContextConfiguration;
@@ -36,8 +37,7 @@ import microsec.test.UaaJwtToken;
 import microsec.test.UaaJwtToken.UaaJwtTokenBuilder;
 import microsec.uaa.model.v2.UserInfo;
 
-@SpringBootTest
-@ContextConfiguration(classes = OrderApplication.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = "security.require-ssl=true")
 public class OrderApplicationSecurityTests extends SecurityIntegrationTest {
 

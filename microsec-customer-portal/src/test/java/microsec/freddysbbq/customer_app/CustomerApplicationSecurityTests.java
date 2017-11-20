@@ -8,12 +8,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 
 import microsec.test.SecurityIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-@SpringBootTest
-@ContextConfiguration(classes = CustomerApplication.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+//@ContextConfiguration(classes = CustomerApplication.class)
 @TestPropertySource(properties = "security.require-ssl=true")
 public class CustomerApplicationSecurityTests extends SecurityIntegrationTest {
-
+	
     @Autowired
     private OAuth2SsoProperties ssoProperties;
 

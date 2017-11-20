@@ -37,6 +37,7 @@ import microsec.common.DumpTokenEndpointConfig;
 import microsec.freddysbbq.menu.model.v1.MenuItem;
 import microsec.freddysbbq.order.model.v1.Order;
 
+
 @SpringBootApplication
 @Controller
 @EnableOAuth2Sso
@@ -49,6 +50,7 @@ public class AdminApplication extends WebSecurityConfigurerAdapter {
         SpringApplication.run(AdminApplication.class, args);
     }
 
+    
     @Autowired
     private SecurityProperties securityProperties;
 
@@ -163,5 +165,6 @@ public class AdminApplication extends WebSecurityConfigurerAdapter {
         restTemplate.delete("//order-service/orders/{id}", id);
         return "redirect:..";
     }
+    
 
 }

@@ -8,6 +8,7 @@ import org.apache.http.entity.ContentType;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
@@ -19,8 +20,7 @@ import microsec.test.SecurityIntegrationTest;
 import microsec.test.UaaJwtToken;
 import microsec.test.UaaJwtToken.UaaJwtTokenBuilder;
 
-@SpringBootTest
-@ContextConfiguration(classes = MenuApplication.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = "security.require-ssl=true")
 public class MenuApplicationSecurityTests extends SecurityIntegrationTest {
 
