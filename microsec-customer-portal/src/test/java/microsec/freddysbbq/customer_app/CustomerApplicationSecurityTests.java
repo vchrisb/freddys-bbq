@@ -11,7 +11,6 @@ import microsec.test.SecurityIntegrationTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
-//@ContextConfiguration(classes = CustomerApplication.class)
 @TestPropertySource(properties = "security.require-ssl=true")
 public class CustomerApplicationSecurityTests extends SecurityIntegrationTest {
 	
